@@ -1,0 +1,16 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.9
+    commands:
+      - pip install -r requirements.txt
+
+  build:
+    commands:
+      - zip -r flask-app.zip app.py requirements.txt Procfile templates/
+
+artifacts:
+  files:
+    - flask-app.zip
